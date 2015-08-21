@@ -1,4 +1,4 @@
-package core
+package pong.core
 
 /**
  * Created by Razim on 8/20/2015.
