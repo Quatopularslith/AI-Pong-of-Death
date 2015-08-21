@@ -5,4 +5,6 @@ package pong.graphics
  */
 class Image {
 
+
+
 }
