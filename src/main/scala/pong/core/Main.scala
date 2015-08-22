@@ -4,6 +4,7 @@ package pong.core
 import org.lwjgl.opengl.{DisplayMode, Display}
 import org.lwjgl.opengl.GL11._
 import pong.graphics.Render
+import pong.physics.BallPhys
 
 /**
  * Created by Razim on 8/20/2015.
@@ -15,10 +16,16 @@ object Main {
 
   lazy val WW = Display.getWidth
   lazy val WH = Display.getHeight
+  lazy val ballPhys = new BallPhys(Render.ball)
 
   def main (args: Array[String]) {
 
     init
+
+    Render.left.setPos(10,10)
+    Render.right.setPos(Main.WW - Render.right.getWidth -  10, Main.WH - Render.right.getHeight - 10)
+    Render.ball.setPos(300,300)
+
 
     while(!Display.isCloseRequested){
       render
@@ -64,7 +71,7 @@ object Main {
   }
 
   def update: Unit ={
-
+    ballPhys.update
   }
 
 }

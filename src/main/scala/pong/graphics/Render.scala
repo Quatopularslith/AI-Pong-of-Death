@@ -14,20 +14,17 @@ object Render {
   val blockTex = ImageCache.loadTextureFromBuffImg(ImageCache.loadImage("block.png"))
   val left = new Image(blockTex, (Main.WH/14.4).toInt, (Main.WW*.2).toInt)
   val right = new Image(blockTex, (Main.WH/14.4).toInt, (Main.WW*.2).toInt)
-  val ball = new Image(blockTex, 100,100)
+  val ball = new Image(blockTex, 50,50)
+
   def renderLeft: Unit ={
-    println("Test")
-    left.setPos(10,10)
     left.render
   }
 
   def renderRight: Unit ={
-    right.setPos(Main.WW - right.getWidth -  10, Main.WH - right.getHeight - 10)
     right.render
   }
 
   def renderBall: Unit ={
-    ball.setPos(300,300)
     ball.render
   }
 
