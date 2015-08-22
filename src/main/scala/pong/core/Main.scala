@@ -3,6 +3,7 @@ package pong.core
 
 import org.lwjgl.opengl.{DisplayMode, Display}
 import org.lwjgl.opengl.GL11._
+import pong.graphics.Render
 
 /**
  * Created by Razim on 8/20/2015.
@@ -16,6 +17,8 @@ object Main {
   lazy val WH = Display.getHeight
 
   def main (args: Array[String]) {
+
+    init
 
     while(!Display.isCloseRequested){
       render
@@ -55,7 +58,9 @@ object Main {
 
   def render: Unit ={
     glClear(GL_COLOR_BUFFER_BIT)
-
+    Render.renderLeft
+    Render.renderRight
+    Render.renderBall
   }
 
   def update: Unit ={

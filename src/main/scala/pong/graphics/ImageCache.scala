@@ -16,8 +16,6 @@ import scala.collection.mutable.HashMap
 /**
  * Created by Razim on 8/21/2015.
  */
-class ImageCache {
-
   object ImageCache {
     val imageCache = HashMap.empty[String, BufferedImage]
     val textureCache = HashMap.empty[String, Texture]
@@ -65,5 +63,3 @@ class ImageCache {
     }
 
   }
-
-}

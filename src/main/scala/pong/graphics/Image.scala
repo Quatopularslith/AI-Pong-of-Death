@@ -6,6 +6,9 @@ import org.lwjgl.opengl.GL11._
  */
 class Image(texId: Int, width: Int, height: Int) {
 
+  val getWidth = width
+  val getHeight = height
+
   var x = 0
   var y = 0
 
