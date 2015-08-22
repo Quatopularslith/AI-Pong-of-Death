@@ -1,4 +1,4 @@
-package pong.ai
+package ai
 
 /**
  * Connection to dendrites

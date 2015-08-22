@@ -1,4 +1,4 @@
-package pong.ai
+package ai
 
 /**
  * Or AI as some Call it
