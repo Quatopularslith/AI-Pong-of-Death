@@ -1,9 +1,11 @@
 package pong.core
 
 
+import net.java.games.input.Keyboard
 import org.lwjgl.opengl.{DisplayMode, Display}
 import org.lwjgl.opengl.GL11._
 import pong.graphics.Render
+import pong.input.KeyboardInput
 import pong.physics.BallPhys
 
 /**
@@ -72,6 +74,7 @@ object Main {
 
   def update: Unit ={
     ballPhys.update
+    KeyboardInput.movLeft
   }
 
 }
