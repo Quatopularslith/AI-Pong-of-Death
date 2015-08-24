@@ -1,9 +1,13 @@
 package pong.core
 
 
+import java.awt.Font
+
 import net.java.games.input.Keyboard
 import org.lwjgl.opengl.{DisplayMode, Display}
 import org.lwjgl.opengl.GL11._
+import org.newdawn.slick.opengl.TextureImpl
+import org.newdawn.slick.{TrueTypeFont}
 import pong.graphics.Render
 import pong.input.KeyboardInput
 import pong.physics.BallPhys
@@ -19,6 +23,10 @@ object Main {
   lazy val WW = Display.getWidth
   lazy val WH = Display.getHeight
   lazy val ballPhys = new BallPhys(Render.ball)
+
+  lazy val font = new TrueTypeFont(new Font("Arial", Font.PLAIN, 28), true)
+  var leftScore = 0
+  var rightScore = 0
 
   def main (args: Array[String]) {
 
@@ -70,6 +78,9 @@ object Main {
     Render.renderLeft
     Render.renderRight
     Render.renderBall
+    TextureImpl.bindNone()
+    font.drawString(WW/2-28,1,leftScore.toString)
+    font.drawString(WW/2+28, 1, rightScore.toString)
   }
 
   def update: Unit ={

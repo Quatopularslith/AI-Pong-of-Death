@@ -4,7 +4,7 @@ package ai
  * Connection in brain. Makes decisions
  * Created by Torri on 8/21/2015.
  */
-class Neuron(val threshold:Double) {
+/*class Neuron(val threshold:Double) {
   val UUID = {
     Neuron.currUUID += 1
     Neuron.currUUID
@@ -36,4 +36,4 @@ class Neuron(val threshold:Double) {
 }
 object Neuron {
   var currUUID:Int = -1
-}
+}*/
