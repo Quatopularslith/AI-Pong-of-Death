@@ -5,6 +5,7 @@ import qualified Graphics.UI.GLFW as GL
 import System.Exit (exitWith, ExitCode(..))
 import Control.Monad (forever)
 import Paddle
+import Render
 
 main :: IO()
 main = do
@@ -24,38 +25,42 @@ main = do
         render win
         GL.swapBuffers win
 
+-------
 
 initGL :: GL.Window -> IO()
 initGL win = do
     glShadeModel gl_SMOOTH
+    glDisable gl_DEPTH_TEST
+    glEnable gl_BLEND
+    glDisable gl_LIGHTING
+    glBlendFunc gl_SRC_ALPHA gl_ONE_MINUS_SRC_ALPHA
     glClearColor 0 0 0 0
     glClearDepth 1
-    glEnable gl_DEPTH_TEST
-    glDepthFunc gl_LEQUAL
-    glHint gl_PERSPECTIVE_CORRECTION_HINT gl_NICEST
+
     (w, h) <- GL.getFramebufferSize win
     resizeWin win w h
+
+-------
 
 resizeWin :: GL.WindowSizeCallback
 resizeWin win w 0 = resizeWin win w 1
 resizeWin _ width height = do
-    glViewport 0 0 (fromIntegral width) (fromIntegral height)
+
     glMatrixMode gl_PROJECTION
     glLoadIdentity
+
+    glOrtho 0 (fromIntegral width) (fromIntegral height) 0 1 (-1)
+
     glMatrixMode gl_MODELVIEW
     glLoadIdentity
     glFlush
-
-render :: GL.Window -> IO()
-render _ = do
-    glClear $ fromIntegral $ gl_COLOR_BUFFER_BIT .|. gl_DEPTH_BUFFER_BIT
-    paddle (10,10) (20,20)
-    glLoadIdentity
-    glFlush
+-------
 
 keyPressed :: GL.KeyCallback
 keyPressed win GL.Key'Escape _ GL.KeyState'Pressed _ = shutdown win
 keyPressed _ _ _ _ _ = return()
+
+-------
 
 shutdown :: GL.WindowCloseCallback
 shutdown win = do
