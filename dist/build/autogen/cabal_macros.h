@@ -14,6 +14,13 @@
   (major1) == 2 && (major2) <  12 || \
   (major1) == 2 && (major2) == 12 && (minor) <= 0)
 
+/* package OpenGLRaw-2.5.1.0 */
+#define VERSION_OpenGLRaw "2.5.1.0"
+#define MIN_VERSION_OpenGLRaw(major1,major2,minor) (\
+  (major1) <  2 || \
+  (major1) == 2 && (major2) <  5 || \
+  (major1) == 2 && (major2) == 5 && (minor) <= 1)
+
 /* package base-4.8.1.0 */
 #define VERSION_base "4.8.1.0"
 #define MIN_VERSION_base(major1,major2,minor) (\
@@ -105,5 +112,5 @@
   (major1) == 2 && (major2) <  22 || \
   (major1) == 2 && (major2) == 22 && (minor) <= 0)
 
-#define CURRENT_PACKAGE_KEY "AIOfD_BdFesUMYD1DHLU35pqJX92"
+#define CURRENT_PACKAGE_KEY "AIOfD_45yBclePdvRIQN1xbd65yX"
 

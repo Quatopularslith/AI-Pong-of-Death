@@ -25,13 +25,13 @@ getBinDir :: IO FilePath
 getBinDir = getPrefixDirRel bindirrel
 
 getLibDir :: IO FilePath
-getLibDir = getPrefixDirRel "x86_64-windows-ghc-7.10.2\\AIOfDeath-0.1.0.0-BdFesUMYD1DHLU35pqJX92"
+getLibDir = getPrefixDirRel "x86_64-windows-ghc-7.10.2\\AIOfDeath-0.1.0.0-45yBclePdvRIQN1xbd65yX"
 
 getDataDir :: IO FilePath
 getDataDir =  catchIO (getEnv "AIOfDeath_datadir") (\_ -> getPrefixDirRel "x86_64-windows-ghc-7.10.2\\AIOfDeath-0.1.0.0")
 
 getLibexecDir :: IO FilePath
-getLibexecDir = getPrefixDirRel "AIOfDeath-0.1.0.0-BdFesUMYD1DHLU35pqJX92"
+getLibexecDir = getPrefixDirRel "AIOfDeath-0.1.0.0-45yBclePdvRIQN1xbd65yX"
 
 getSysconfDir :: IO FilePath
 getSysconfDir = getPrefixDirRel "etc"

@@ -6,5 +6,5 @@ import Paddle
 display :: DisplayCallback
 display = do
   clear [ColorBuffer]
-  paddle (10, 20)
+  paddle (10, 20) (20,20)
   flush

@@ -1,10 +1,18 @@
 module Paddle (paddle) where
 
-import Graphics.UI.GLUT
+import Graphics.Rendering.OpenGL.Raw
 
-vertex2f :: (GLfloat, GLfloat) -> IO()
-vertex2f (x, y) = vertex $ Vertex2 x y
+paddle :: (GLfloat, GLfloat) -> (GLfloat, GLfloat) -> IO()
+paddle (x, y) (w, h) = do
+    glPushMatrix
 
-paddle :: (GLfloat, GLfloat) -> IO()
-paddle (x, y) = renderPrimitive Points $ mapM_ vertex2f
-    [(x, y), (x, y + 1), (x + 1, y + 1), (x + 1, y + 1)]
+    glBegin gl_QUADS
+
+    glVertex2f x y
+    glVertex2f x (y+h)
+    glVertex2f (x+w) (y+h)
+    glVertex2f (x+w) y
+
+    glEnd
+
+    glPopMatrix
