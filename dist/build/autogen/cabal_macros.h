@@ -91,6 +91,13 @@
   (major1) == 1 && (major2) <  22 || \
   (major1) == 1 && (major2) == 22 && (minor) <= 0)
 
+/* tool pkg-config-0.28 */
+#define TOOL_VERSION_pkg_config "0.28"
+#define MIN_TOOL_VERSION_pkg_config(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  28 || \
+  (major1) == 0 && (major2) == 28 && (minor) <= 0)
+
 /* tool strip-2.22 */
 #define TOOL_VERSION_strip "2.22"
 #define MIN_TOOL_VERSION_strip(major1,major2,minor) (\
@@ -98,5 +105,5 @@
   (major1) == 2 && (major2) <  22 || \
   (major1) == 2 && (major2) == 22 && (minor) <= 0)
 
-#define CURRENT_PACKAGE_KEY "Hello_IpYcOlqbXsQ27LFDrmB24a"
+#define CURRENT_PACKAGE_KEY "AIOfD_BdFesUMYD1DHLU35pqJX92"
 
