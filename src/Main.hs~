@@ -1,9 +1,0 @@
-module Main where
-
-
-main = do
-  let result = sq 2
-  let r2 = show result
-  print result
-  -- writeFile "hundred.txt" r2
-
