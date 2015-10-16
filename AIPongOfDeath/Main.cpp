@@ -1,5 +1,6 @@
 #include "Main.h"
 #include "Render.h"
+#include "Input.h"
 #include <glfw3.h>
 
 
@@ -39,6 +40,9 @@ int main(void){
     }
 
     glfwMakeContextCurrent(window);
+	glfwSetInputMode(window, GLFW_STICKY_KEYS, 1);
+	Input input = Input();
+	glfwSetKeyCallback(window, input.keyInput);
 
     initGL();
 
