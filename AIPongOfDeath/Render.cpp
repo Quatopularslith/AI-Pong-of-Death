@@ -2,7 +2,6 @@
 #include <glfw3.h>
 
 
-
 Render::Render()
 {
 	paddle.setPos(100,100);

@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#define screenWidth 1280
+#define screenHeight 720
 
 class Main
 {
@@ -8,8 +10,6 @@ class Main
 public:
 
     int main(void);
-    int screenWidth;
-    int screenHeight;
 
 private:
 

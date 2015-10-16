@@ -2,9 +2,6 @@
 #include "Render.h"
 #include <glfw3.h>
 
-int screenWidth = 640;
-int screenHeight = 480;
-
 
 void initGL(void){
 

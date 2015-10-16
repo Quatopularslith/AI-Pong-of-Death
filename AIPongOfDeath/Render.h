@@ -1,6 +1,7 @@
 #ifndef RENDER_H
 #define RENDER_H
 #include "Paddle.h"
+#include "Main.h"
 
 class Render
 {
@@ -9,7 +10,7 @@ class Render
         virtual ~Render();
         void render();
 
-		Paddle paddle = Paddle(50,200);
+		Paddle paddle = Paddle(screenWidth * .2, screenHeight / 14.4);
 
     protected:
     private:
