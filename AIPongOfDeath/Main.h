@@ -1,8 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#define screenWidth 1280
-#define screenHeight 720
+extern int screenWidth;
+extern int screenHeight;
 
 class Main
 {

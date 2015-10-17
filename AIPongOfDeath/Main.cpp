@@ -3,6 +3,8 @@
 #include "Input.h"
 #include <glfw3.h>
 
+int screenWidth = 1280;
+int screenHeight = 720;
 
 void initGL(void){
 
@@ -32,7 +34,7 @@ int main(void){
     GLFWwindow* window;
     if(!glfwInit())
         return -1;
-
+	
     window = glfwCreateWindow(screenWidth, screenHeight, "AI-Pong-Of-Death", NULL, NULL);
     if (!window){
         glfwTerminate();
@@ -40,13 +42,12 @@ int main(void){
     }
 
     glfwMakeContextCurrent(window);
-	glfwSetInputMode(window, GLFW_STICKY_KEYS, 1);
+
+	Render render = Render();
 	Input input = Input();
 	glfwSetKeyCallback(window, input.keyInput);
 
     initGL();
-
-    Render render = Render();
 
     while(!glfwWindowShouldClose(window)){
 

@@ -1,16 +1,32 @@
 #ifndef RENDER_H
 #define RENDER_H
-#include "Paddle.h"
+#include "Box.h"
 #include "Main.h"
+#include "Physics.h"
+
+extern int plx;
+extern int ply;
+
+extern int prx;
+extern int pry;
+
+extern Box lBox;
+extern Box rBox;
+extern Box ball;
+extern Physics phys;
 
 class Render
 {
     public:
-        Render();
+		Render();
+
+		void update();
+
         virtual ~Render();
         void render();
 
-		Paddle paddle = Paddle(screenWidth * .2, screenHeight / 14.4);
+		//Box lBox = Box(screenWidth * .2, screenHeight / 14.4);
+		//Box rBox = Box(screenWidth * .2, screenHeight / 14.4);
 
     protected:
     private:

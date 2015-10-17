@@ -7,8 +7,7 @@ class Input
 public:
 
 	Input();
-
-	void keyInput(GLFWwindow*, int, int, int, int);
+	static void keyInput(GLFWwindow*, int, int, int, int);
 
 	~Input();
 };
