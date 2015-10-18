@@ -4,8 +4,7 @@
 extern int screenWidth;
 extern int screenHeight;
 
-class Main
-{
+class Main {
 
 public:
 
