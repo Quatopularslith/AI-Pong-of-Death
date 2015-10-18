@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Input.h"
 #include "../graphics/Render.h"
 #include "../core/Main.h"
@@ -22,4 +23,5 @@ void Input::keyInput(GLFWwindow *window, int key, int scancode, int action, int 
 }
 
 Input::~Input() {
+    std::cout << "Input being deleted" << std::endl;
 }

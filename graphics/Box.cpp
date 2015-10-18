@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Box.h"
 
 Box::Box(GLfloat h, GLfloat w) {
@@ -28,5 +29,5 @@ void Box::setPos(GLfloat x1, GLfloat y1) {
 }
 
 Box::~Box() {
-    //dtor
+    std::cout << "Box being deleted" << std::endl;
 }

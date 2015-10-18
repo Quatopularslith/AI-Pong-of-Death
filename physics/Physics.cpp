@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Physics.h"
 #include "../core/Main.h"
 #include "../graphics/Render.h"
@@ -25,16 +26,17 @@ void Physics::update(Box &box) {
         //increase right score
         ;
 
-    if (box.x >= lBox.x && box.x <= lBox.x + lBox.width) if (box.y + box.height >= lBox.y &&
-                                                             box.y <= box.y + box.height)
-        xVel = -xVel;
+    if (box.x >= lBox.x && box.x <= lBox.x + lBox.width)
+        if (box.y + box.height >= lBox.y && box.y <= box.y + box.height)
+            xVel = -xVel;
 
-    if (box.x + box.width >= rBox.x && box.x <= rBox.x + rBox.width) if (box.y + box.height >= rBox.y &&
-                                                                         box.y <= rBox.y + rBox.height)
-        yVel = -yVel;
+    if (box.x + box.width >= rBox.x && box.x <= rBox.x + rBox.width)
+        if (box.y + box.height >= rBox.y && box.y <= rBox.y + rBox.height)
+            yVel = -yVel;
 
     box.setPos(box.x + (xVel * vel), box.y + (yVel * vel));
 }
 
 Physics::~Physics() {
+    std::cout << "Physics being deleted" << std::endl;
 }

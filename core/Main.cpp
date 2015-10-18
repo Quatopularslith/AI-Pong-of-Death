@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Main.h"
 #include "../graphics/Render.h"
 #include "../input/Input.h"
@@ -5,7 +6,7 @@
 int screenWidth = 1280;
 int screenHeight = 720;
 
-void initGL(void) {
+void Main::initGL(void) {
 
     glShadeModel(GL_SMOOTH);
     glDisable(GL_DEPTH_TEST);
@@ -27,8 +28,7 @@ void initGL(void) {
 
 }
 
-
-int main(void) {
+int Main::main(void) {
 
     GLFWwindow *window;
     if (!glfwInit())
@@ -42,6 +42,7 @@ int main(void) {
 
     glfwMakeContextCurrent(window);
     glfwGetWindowFrameSize(window, 0, 0, 0, 0);
+    glfwSwapInterval(1);
 
     Render render = Render();
     Input input = Input();
@@ -59,4 +60,15 @@ int main(void) {
 
     glfwTerminate();
     return 0;
+}
+
+Main::~Main() {
+    std::cout << "Main being deleted" << std::endl;
+}
+
+int main(void){
+
+    Main main = Main();
+    main.main();
+
 }

@@ -21,7 +21,7 @@ public:
 
     void update();
 
-    virtual ~Render();
+    ~Render();
 
     void render();
 

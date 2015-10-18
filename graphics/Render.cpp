@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Render.h"
 #include "../core/Main.h"
 
@@ -40,5 +41,5 @@ void Render::render() {
 }
 
 Render::~Render() {
-    //dtor
+    std::cout << "Render being deleted" << std::endl;
 }

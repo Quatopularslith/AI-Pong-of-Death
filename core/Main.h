@@ -9,9 +9,9 @@ class Main {
 public:
 
     int main(void);
-
+    ~Main();
 private:
-
+    void initGL(void);
 };
 
 #endif // MAIN_H

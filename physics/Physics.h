@@ -10,7 +10,7 @@ public:
 
     void update(Box &);
 
-    virtual ~Physics();
+    ~Physics();
 };
 
 #endif

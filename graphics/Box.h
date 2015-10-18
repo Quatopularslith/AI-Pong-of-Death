@@ -15,7 +15,7 @@ public:
 
     void setPos(GLfloat, GLfloat);
 
-    virtual ~Box();
+    ~Box();
 
 protected:
 private:
