@@ -27,11 +27,11 @@ void Physics::update(Box &box) {
         ;
 
     if (box.x >= lBox.x && box.x <= lBox.x + lBox.width)
-        if (box.y + box.height >= lBox.y && box.y <= box.y + box.height)
+        if (box.y + box.height >= lBox.y && box.y <= lBox.y + lBox.height && box.y >= lBox.y)
             xVel = -xVel;
 
-    if (box.x + box.width >= rBox.x && box.x <= rBox.x + rBox.width)
-        if (box.y + box.height >= rBox.y && box.y <= rBox.y + rBox.height)
+    if (box.x + box.width >= rBox.x && box.x + box.width <= rBox.x + rBox.width)
+        if (box.y + box.height >= rBox.y && box.y <= rBox.y + rBox.height && box.y >= rBox.y)
             yVel = -yVel;
 
     box.setPos(box.x + (xVel * vel), box.y + (yVel * vel));

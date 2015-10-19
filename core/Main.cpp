@@ -47,13 +47,11 @@ int Main::main(void) {
     Render render = Render();
     Input input = Input();
     glfwSetKeyCallback(window, input.keyInput);
-
     initGL();
 
     while (!glfwWindowShouldClose(window)) {
 
         render.render();
-
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
